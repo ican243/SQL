@@ -63,3 +63,47 @@ FROM professor
 
 SELECT name 이름, POSITION 직위, 2026-year_emp AS 재직연수
 FROM professor
+
+ SELECT *
+ FROM student
+ WHERE resident_id LIKE '%*2%'
+ 
+ SELECT name FROM student
+ UNION all
+ SELECT name FROM professor
+ 
+ SELECT s.stu_id
+ FROM student s, department d, takes t
+ WHERE s.dept_id = d.dept_id
+ AND t.stu_id = s.stu_id
+ AND dept_name = '컴퓨터공학과'
+ AND grade = 'A+'
+ 
+ SELECT stu_id
+ FROM student s, department d
+ WHERE s.dept_id = d.dept_id AND dept_name = '컴퓨터공학과'
+ INTERSECT
+ SELECT stu_id
+ FROM TAKES
+ WHERE grade = 'A+'
+ 
+ SELECT * FROM takes WHERE grade = 'A+';
+ 
+ SELECT stu_id
+ FROM student s,department d
+ WHERE s.dept_id = d.dept_id
+ AND dept_name ='산업공학과'
+ MINUS
+ SELECT stu_id
+ FROM takes
+ WHERE grade = 'A+'
+ 
+ 
+ SELECT title, credit, YEAR, semester, division
+ FROM course, class
+ WHERE course.course_id = class.course_id
+ 
+ SELECT *
+ FROM class
+ 
+ 
