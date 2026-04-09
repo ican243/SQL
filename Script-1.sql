@@ -283,3 +283,24 @@ WITH READ ONLY;
 SELECT * FROM V_TAKES
 
 INSERT into V_TAKES VALUES('1292502','c101-01') 
+
+
+
+------- 2026.04.09---------
+
+SELECT deptno AS 부서코드, dname AS 부서명, loc AS 지역
+FROM dept;
+
+SELECT empno, ename || '('|| job ||')' employee
+FROM emp;
+
+SELECT ename, round(sal/12, 1), trunc(sal/12,1)
+FROM emp
+
+SELECT ename, hiredate,
+to_char(hiredate, 'YYYY') 입사년도,
+to_char(hiredate, 'MM') 월,
+TO_char(hiredate, 'DD') 일
+FROM emp;
+
+
